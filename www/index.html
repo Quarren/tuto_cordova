@@ -29,7 +29,6 @@
 
         <!-- partie météo -->
         <button id='get-weather'>Obtenir la météo près de chez vous !</button>
-
         <div id='plugin-meteo' class='resultats' style='display:none'>
             <div>
                 <h3>Ville : </h3>
@@ -63,41 +62,49 @@
 
         <!-- Partie batterie -->
         <button id='btn-battery'>Afficher le niveau de batterie</button>
-
         <div id='plugin-battery' style='display:none'>
-        
+            <p>partie batterie hehe</p>
         </div>
 
         <!-- partie camera  -->
+        <button id='btn-camera'>Toggle camera</button>
         <div id='plugin-camera' style='display:none'>
-        
+            <p>partie camera onchonch</p>
         </div>
 
-        <!-- partie files -->
+        <!-- partie file -->
+        <button id='btn-file'>Toggle file</button>
         <div id='plugin-file' style='display:none'>
-        
+            <p>partie files yo</p>
         </div>
 
         <script>
             var start = document.getElementById('start');
             var partie_meteo = document.getElementById('plugin-meteo');
             var batterie = document.getElementById('plugin-battery');
-            var camera = document.getElementById('plugin-battery');
+            var camera = document.getElementById('plugin-camera');
             var file = document.getElementById('plugin-file');
             var btn = document.getElementById('get-weather');
 
-            btn.addEventListener('click', function() {
+            $(btn).click(function() {
                 getWeatherLocation();
-                start.style.display = 'none';
-                partie_meteo.style.display = 'block';
-                console.log('btn cliqué');
+                $(partie_meteo).toggle('display');
             });
 
-            var btn_battery = document.getElementById('btn-battery');
-            btn_battery.addEventListener('click', function() {
-                batterie.style.display = block;
+            var btn_batterie = document.getElementById('btn-battery');
+            $(btn_batterie).click(function() {
+                $(batterie).toggle('display');
             });
 
+            var btn_camera = document.getElementById('btn-camera');
+            $(btn_camera).click(function() {
+                $(camera).toggle('display');
+            });
+
+            var btn_file = document.getElementById('btn-file');
+            $(btn_file).click(function() {
+                $(file).toggle('display');
+            });
 
         </script>
         <script src="cordova.js"></script>
