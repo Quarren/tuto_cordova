@@ -4,6 +4,20 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
+
+    // error : Battery not supported
+    window.addEventListener("batterystatus", onBatteryStatus, false);
+    window.addEventListener("batterylow", onBatteryLow, false);
+    window.addEventListener("batterycritical", onBatteryCritical, false);
+    
+    /*
+    window.addEventListener("batterystatus", function(info) {
+        console.log("[batterystatus event] Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }, false);
+
+    window.addEventListener("batterylow", function(info) {
+        console.log("[batterylow event] Level: " + info.level);
+    }, false);*/
 }
 
 // Début du code pour le plugin geolocation
@@ -52,9 +66,46 @@ function onWeatherError(error) {
 }
 
 // Début du code pour le plugin battery-status
+// Fonctionne sur Chrome mais pas sur Firefox
 
+function onBatteryStatus(status) {
+    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+    window.alert("battery level: " + status.level + '%' + " isPlugged: " + status.isPlugged);
+};
+
+function onBatteryLow(status) {
+    alert("Battery Level Low " + status.level + "%");
+};
+
+function onBatteryCritical(status) {
+    alert("Battery Level Critical " + status.level + "%\nRecharge Soon!");
+};
 
 
 // Début du code pour le plugin camera
+
+var renderPic = function(data) {
+	var image = document.getElementById('myImage');
+	image.src = "data:image/jpeg;base64," + data;		
+};
+
+var cameraError = function(err) {
+	console.log('[camera error]',err);	
+};
+
+document.querySelector('#testCameraExisting').addEventListener('click', function() {
+	navigator.camera.getPicture(renderPic, cameraError, {
+		sourceType:Camera.PictureSourceType.PHOTOLIBRARY,
+		destinationType:Camera.DestinationType.DATA_URL
+	});
+});
+
+document.querySelector('#testCameraNew').addEventListener('click', function() {
+	navigator.camera.getPicture(renderPic, cameraError, {
+		sourceType:Camera.PictureSourceType.CAMERA,
+		destinationType:Camera.DestinationType.DATA_URL
+	});
+});
+
 
 // Début du code pour le plugin file
