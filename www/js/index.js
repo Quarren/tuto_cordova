@@ -59,18 +59,13 @@ function getWeather(latitude, longitude) {
 
                 if (results.weather.length) {
 
-                    //$('#description').text(results.name);
-                    description.innerText = results.name;
-                    $('#temp').text(results.main.temp);
+                    $('#description').text(results.name);
+                    $('#temp-max').text(results.main.temp);
+                    $('#temp-min').text(results.main.temp_min);
+                    $('#temp-feels').text(results.main.feels_like);
                     $('#wind').text(results.wind.speed);
                     $('#humidity').text(results.main.humidity);
                     $('#visibility').text(results.weather[0].main);
-
-                    var sunriseDate = new Date(results.sys.sunrise);
-                    $('#sunrise').text(sunriseDate.toLocaleTimeString());
-
-                    var sunsetDate = new Date(results.sys.sunrise);
-                    $('#sunset').text(sunsetDate.toLocaleTimeString());
 
                     console.log(results);
                 }

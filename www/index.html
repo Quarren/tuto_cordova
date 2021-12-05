@@ -30,24 +30,45 @@
         <button id='get-weather'>Obtenir la météo près de chez vous !</button>
 
         <div id='resultats' class='resultats' style='display:none'>
-            <div id='description'></div>
-            <div id='temp'></div>
-            <div id='wind'></div>
-            <div id='humidity'></div>
-            <div id='visibility'></div>
-            <div id='sunrise'></div>
-            <div id='sunset'></div>
+            <div>
+                <h3>Ville : </h3>
+                <p id='description'></p>
+            </div>
+            <div>
+                <h3>Température max :</h3>
+                <p id='temp-max'></p>
+            </div>
+            <div>
+                <h3>Température min : </h3>
+                <p id='temp-min'></p>
+            </div>
+            <div>
+                <h3>Température ressentie : </h3>
+                <p id='temp-feels'></p>
+            </div>
+            <div>
+                <h3>Vent : </h3>
+                <p id='wind'></p>
+            </div>
+            <div>
+                <h3>Humidité : </h3>
+                <p id='humidity'></p>
+            </div>
+            <div>
+                <h3>Météo : </h3>
+                <p id='visibility'></p>
+            </div>
         </div>
         <script>
             var start = document.getElementById('start');
             var resultats = document.getElementById('resultats');
             var description = document.getElementById('description');
-            var temp = document.getElementById('temp');
+            var temp_max = document.getElementById('temp-max');
+            var temp_min = document.getElementById('temp-min');
+            var temp_feels = document.getElementById('temp-feels');
             var wind = document.getElementById('wind');
             var humidity = document.getElementById('humidity');
             var visiblity = document.getElementById('visibility');
-            var sunrise = document.getElementById('sunrise');
-            var sunset = document.getElementById('sunset');
             var btn = document.getElementById('get-weather');
 
             btn.addEventListener('click', function() {
