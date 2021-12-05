@@ -27,9 +27,10 @@
             </div>
         </div>
 
+        <!-- partie météo -->
         <button id='get-weather'>Obtenir la météo près de chez vous !</button>
 
-        <div id='resultats' class='resultats' style='display:none'>
+        <div id='plugin-meteo' class='resultats' style='display:none'>
             <div>
                 <h3>Ville : </h3>
                 <p id='description'></p>
@@ -59,23 +60,42 @@
                 <p id='visibility'></p>
             </div>
         </div>
+
+        <!-- Partie batterie -->
+        <button id='btn-battery'>Afficher le niveau de batterie</button>
+
+        <div id='plugin-battery' style='display:none'>
+        
+        </div>
+
+        <!-- partie camera  -->
+        <div id='plugin-camera' style='display:none'>
+        
+        </div>
+
+        <!-- partie files -->
+        <div id='plugin-file' style='display:none'>
+        
+        </div>
+
         <script>
             var start = document.getElementById('start');
-            var resultats = document.getElementById('resultats');
-            var description = document.getElementById('description');
-            var temp_max = document.getElementById('temp-max');
-            var temp_min = document.getElementById('temp-min');
-            var temp_feels = document.getElementById('temp-feels');
-            var wind = document.getElementById('wind');
-            var humidity = document.getElementById('humidity');
-            var visiblity = document.getElementById('visibility');
+            var partie_meteo = document.getElementById('plugin-meteo');
+            var batterie = document.getElementById('plugin-battery');
+            var camera = document.getElementById('plugin-battery');
+            var file = document.getElementById('plugin-file');
             var btn = document.getElementById('get-weather');
 
             btn.addEventListener('click', function() {
                 getWeatherLocation();
                 start.style.display = 'none';
-                resultats.style.display = 'block';
+                partie_meteo.style.display = 'block';
                 console.log('btn cliqué');
+            });
+
+            var btn_battery = document.getElementById('btn-battery');
+            btn_battery.addEventListener('click', function() {
+                batterie.style.display = block;
             });
 
 
