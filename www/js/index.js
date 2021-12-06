@@ -34,7 +34,7 @@ function getWeatherLocation() {
 
 // Get weather by using coordinates
 function getWeather(latitude, longitude) {
-    var OpenWeatherAppKey = "862214dafbb83dc2e46db490e7bc9efb";
+    var OpenWeatherAppKey = "enter api key here";
     var queryString = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + OpenWeatherAppKey + '&units=imperial';
     $.getJSON(queryString, function (results) {
         if (results.weather.length) {
