@@ -109,4 +109,9 @@ document.querySelector('#testCameraNew').addEventListener('click', function() {
 });
 
 
-// Début du code pour le plugin file
+// Début du code pour le plugin in app browser
+
+document.querySelector('#testIAB').addEventListener('click', function() {
+	iabRef = cordova.InAppBrowser.open('https://www.univ-grenoble-alpes.fr/','_blank','location=yes');
+});
+

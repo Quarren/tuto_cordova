@@ -79,10 +79,11 @@
             <button id='testCameraNew'>Ajouter nouvelle camera</button>
         </div>
 
-        <!-- partie file -->
-        <button id='btn-file'>Toggle file</button>
-        <div id='plugin-file' style='display:none'>
-            <p>partie files</p>
+        <!-- partie InAppBrowser -->
+        <button id='btn-iab'>Toggle InAppBrowser</button>
+        <div id='plugin-iab' style='display:none'>
+            <p>Partie IAB</p>
+            <button id='testIAB'>Site UGA</button>
         </div>
 
         <script>
@@ -90,7 +91,7 @@
             var partie_meteo = document.getElementById('plugin-meteo');
             var battery = document.getElementById('plugin-battery');
             var camera = document.getElementById('plugin-camera');
-            var file = document.getElementById('plugin-file');
+            var iab = document.getElementById('plugin-iab');
             var btn = document.getElementById('get-weather');
 
             $(btn).click(function() {
@@ -108,9 +109,9 @@
                 $(camera).toggle('display');
             });
 
-            var btn_file = document.getElementById('btn-file');
-            $(btn_file).click(function() {
-                $(file).toggle('display');
+            var btn_iab = document.getElementById('btn-iab');
+            $(btn_iab).click(function() {
+                $(iab).toggle('display');
             });
 
             /*
