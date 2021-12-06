@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <!-- Partie batterie -->
+        <!-- Partie batterie
         <button id='btn-battery'>Afficher le niveau de batterie</button>
         <div id='plugin-battery' style='display:none'>
             <div>
@@ -69,13 +69,14 @@
             </div>
             <p>partie batterie</p>
         </div>
+        -->
 
         <!-- partie camera  -->
         <button id='btn-camera'>Toggle camera</button>
         <div id='plugin-camera' style='display:none'>
             <p>partie camera</p>
-            <button id='testCameraExisting'>Tester si la caméra existe</button>
-            <button id='testCameraNew'>test camera new ?</button>
+            <!--<button id='testCameraExisting'>Tester si la caméra existe</button>-->
+            <button id='testCameraNew'>Ajouter nouvelle camera</button>
         </div>
 
         <!-- partie file -->
@@ -112,10 +113,11 @@
                 $(file).toggle('display');
             });
 
+            /*
             var btn_battery_lvl = document.getElementById('btn-battery-lvl');
             $(btn_battery_lvl).click(function() {
                 //document.getElementById('battery-lvl').innerText = window.batterystatus.level;
-            });
+            });*/
 
         </script>
         <script src="cordova.js"></script>
