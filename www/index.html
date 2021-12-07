@@ -75,7 +75,6 @@
         <button id='btn-camera'>Toggle camera</button>
         <div id='plugin-camera' style='display:none'>
             <p>partie camera</p>
-            <!--<button id='testCameraExisting'>Tester si la caméra existe</button>-->
             <button id='testCameraNew'>Ajouter nouvelle camera</button>
         </div>
 
@@ -89,9 +88,9 @@
         <script>
             var start = document.getElementById('start');
             var partie_meteo = document.getElementById('plugin-meteo');
-            var battery = document.getElementById('plugin-battery');
-            var camera = document.getElementById('plugin-camera');
-            var iab = document.getElementById('plugin-iab');
+            var partieBattery = document.getElementById('plugin-battery');
+            var partieCamera = document.getElementById('plugin-camera');
+            var partieIab = document.getElementById('plugin-iab');
             var btn = document.getElementById('get-weather');
 
             $(btn).click(function() {
@@ -101,17 +100,17 @@
 
             var btn_battery = document.getElementById('btn-battery');
             $(btn_battery).click(function() {
-                $(battery).toggle('display');
+                $(partieBattery).toggle('display');
             });
 
             var btn_camera = document.getElementById('btn-camera');
             $(btn_camera).click(function() {
-                $(camera).toggle('display');
+                $(partieCamera).toggle('display');
             });
 
             var btn_iab = document.getElementById('btn-iab');
             $(btn_iab).click(function() {
-                $(iab).toggle('display');
+                $(partieIab).toggle('display');
             });
 
             /*
