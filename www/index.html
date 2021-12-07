@@ -3,16 +3,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
-        <!--
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' '; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval';">
-        -->
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
         <link rel="stylesheet" href="css/index.css">
         <script src='js/jquery.js'></script>
@@ -60,16 +54,6 @@
             </div>
         </div>
 
-        <!-- Partie batterie
-        <button id='btn-battery'>Afficher le niveau de batterie</button>
-        <div id='plugin-battery' style='display:none'>
-            <div>
-                <button id='btn_battery_lvl'>Afficher le niveau de la batterie</button>
-                <p id='battery-lvl'></p>
-            </div>
-            <p>partie batterie</p>
-        </div>
-        -->
 
         <!-- partie camera  -->
         <button id='btn-camera'>Toggle camera</button>
@@ -82,7 +66,7 @@
         <button id='btn-iab'>Toggle InAppBrowser</button>
         <div id='plugin-iab' style='display:none'>
             <p>Partie IAB</p>
-            <button id='testIAB'>Site UGA</button>
+            <button id='testIAB'>Test IAB</button>
         </div>
 
         <script>
@@ -112,13 +96,6 @@
             $(btn_iab).click(function() {
                 $(partieIab).toggle('display');
             });
-
-            /*
-            var btn_battery_lvl = document.getElementById('btn-battery-lvl');
-            $(btn_battery_lvl).click(function() {
-                //document.getElementById('battery-lvl').innerText = window.batterystatus.level;
-            });*/
-
         </script>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
