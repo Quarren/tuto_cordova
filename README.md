@@ -1,6 +1,6 @@
 # tuto_cordova
 
-<h1>1) Geolocalisation<h1>
+<h1>1) Geolocalisation</h1>
 
 <br>Installer le plugin gelocation : cordova plugin add cordova-plugin-geolocation
 
