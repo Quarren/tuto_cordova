@@ -68,18 +68,18 @@ function onWeatherError(error) {
 // Début du code pour le plugin battery-status
 // Fonctionne sur Chrome mais pas sur Firefox
 
-
+// utilisez les propriétés level et isPlugged sur l'objet status pour alerter ou envoyer sur la console
+// le niveau de batterie (en %) et l'état de l'appareil (branché ou non) dans les 3 situations suivantes
 function onBatteryStatus(status) {
-    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
-    window.alert("battery level: " + status.level + '%' + " isPlugged: " + status.isPlugged);
+
 };
 
 function onBatteryLow(status) {
-    alert("Battery Level Low " + status.level + "%");
+	
 };
 
 function onBatteryCritical(status) {
-    alert("Battery Level Critical " + status.level + "%\nRecharge Soon!");
+    
 };
 
 
@@ -95,19 +95,21 @@ var cameraError = function(err) {
 };
 
 // TODO: créer un bouton dans index.html, récupérer son id et la passer dans le querySelector() ci-dessous
-document.querySelector(/*TODO*/).addEventListener('click', function() {
+/*
+document.querySelector(TODO).addEventListener('click', function() {
 	navigator.camera.getPicture(renderPic, cameraError, {
 		sourceType:Camera.PictureSourceType.CAMERA,
 		destinationType:Camera.DestinationType.DATA_URL
 	});
 });
+*/
 
 
 // Début du code pour le plugin in app browser
 
 // TODO: créer un bouton dans index.html, passer son id dans le querySelector() ci-dessous
-// passez l'url de votre choix
+// remplacez le placeholder TODO par l'url de votre choix
 document.querySelector('#testIAB').addEventListener('click', function() {
-	iabRef = cordova.InAppBrowser.open(/*TODO*/,'_blank','location=yes');
+	//iabRef = cordova.InAppBrowser.open(/*TODO*/,'_blank','location=yes');
 });
 
